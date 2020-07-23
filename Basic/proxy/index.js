@@ -12,4 +12,4 @@ let objProxy = new Proxy(obj, {
 
 objProxy.aaa;
 
-console.log(objProxy.name);
+console.log(objProxy.aaa);

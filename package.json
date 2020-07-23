@@ -6,6 +6,7 @@
   "dependencies": {
     "hprose": "^2.0.51",
     "koa": "^2.13.0",
+    "log4js": "^6.3.0",
     "natives": "^1.1.6",
     "underscore": "^1.10.2"
   },
