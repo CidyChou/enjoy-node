@@ -1,4 +1,11 @@
 (async function () {
+
+    setInterval(() => {}, 1000);
+
+    require('sleep').sleep(10);
+    console.log('finsh');
+
+
     let set = new Set();
 
     set.add(123);
