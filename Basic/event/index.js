@@ -8,3 +8,4 @@ a.on('hhh', () => {
 });
 
 a.emit('hhh');
+console.log(1111);
