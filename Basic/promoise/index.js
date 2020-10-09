@@ -3,7 +3,7 @@
 
 let promise = new Promise(function (resolve, reject) {
     if (true) {
-        resolve(1);
+        resolve();
     } else {
         reject(2);
     }

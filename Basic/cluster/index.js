@@ -3,23 +3,23 @@ const http = require('http');
 const numCPUs = require('os').cpus().length;
 
 if (cluster.isMaster) {
-  console.log(`主进程 ${process.pid} 正在运行`);
+  console.log(`Master ${process.pid} is running`);
 
-  // 衍生工作进程。
+  // Fork workers.
   for (let i = 0; i < numCPUs; i++) {
     cluster.fork();
   }
 
   cluster.on('exit', (worker, code, signal) => {
-    console.log(`工作进程 ${worker.process.pid} 已退出`);
+    console.log(`worker ${worker.process.pid} died`);
   });
 } else {
-  // 工作进程可以共享任何 TCP 连接。
-  // 在本例子中，共享的是 HTTP 服务器。
+  // Workers can share any TCP connection
+  // In this case it is an HTTP server
   http.createServer((req, res) => {
     res.writeHead(200);
-    res.end('你好世界\n');
+    res.end('hello world\n');
   }).listen(8000);
 
-  console.log(`工作进程 ${process.pid} 已启动`);
+  console.log(`Worker ${process.pid} started`);
 }
