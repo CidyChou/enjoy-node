@@ -16,8 +16,6 @@
 const net = require('net');
 const server = net.createServer((c) => {
   // 'connection' 监听器。
-  // test
-  // test2
   console.log('客户端已连接');
 
 
