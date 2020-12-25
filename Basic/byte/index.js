@@ -30,6 +30,9 @@ console.log(decimalToHex(2,8));
 
 
 
+
+
+
 function stringToHex(str) {
     var val = "";
     for (var i = 0; i < str.length; i++) {
